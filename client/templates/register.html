@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/register.css">
+   
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="Logo-title"> ENG@GE </div>
+        <div class="motto"> the twitter clone done by Jean Bosco Ntwari</div>
+    </header>
+
+    <div class='nav-bar'>
+        <div class="left-nav nav-item" tabindex="1">Eng@ge!</div>
+        <div class="Login nav-item" tabindex="2"> <a href="login.html">Login</a> </div>
+        <div class="Sign UP nav-item" tabindex="3" style="background-color:  rgb(104, 19, 4);"> <a href="#"> Sign Up </a> </div>
+    </div>
+
+    <div class="main">
+        <h3>Join Eng@ge Today.</h3>
+        <form action="">
+            <div class="input_container">
+                <label for="full_name">Full name</label>
+                <input type="text" placeholder="eg: Jean Bosco Ntwari" id="full_name">
+            </div>
+
+            <div class="input_container">
+                <label for="user_name">User name</label>
+                <input type="text" placeholder="eg: jntwari" id="user_name">
+            </div>
+
+            <div class="input_container">
+                <label for="password">Password</label>
+                <input type="password" id="password">
+            </div>
+
+            <div class="input_container">
+                <label for="confirm_password">Confirm password</label>
+                <input type="password"  id="confirm_password">
+                <span id="password-match"></span>
+            </div>
+
+            <div>
+                <span>Profile image </span>
+                <button>Browse...</button>
+            </div>
+
+            <div>
+                <input type="button" placeholder="Sign up" style="padding: 5px; background-color: red; color: white; font-size: larger; margin-top: 10px; width: 500px;"
+                    onclick="createUser()"> 
+                    Sign up </input>  
+            </div>
+        </form>
+    </div>
+
+    <div>
+        Copyright 2021 BoccoG
+    </div>
+    
+</body>
+
+<script src="../src/node_modules/axios/dist/axios.min.js"></script>
+<script src='../src/register.js'></script>
+
+
+</html>
+
+

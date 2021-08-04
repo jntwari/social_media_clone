@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/register.css">
+   
+    <title>Social media clone</title>
+</head>
+<body>
+    <header>
+        <div class="Logo-title"> ENG@GE </div>
+        <div class="motto"> the twitter clone done by Jean Bosco Ntwari</div>
+    </header>
+
+    <div class='nav-bar'>
+        <div class="left-nav nav-item" tabindex="1">Eng@ge</div>
+        <div class="Login nav-item" tabindex="2" style="background-color:  rgb(104, 19, 4);"> <a href="#">Login</a> </div>
+        <div class="Sign UP nav-item" tabindex="3"> <a href="register.html"> Sign Up </a> </div>
+    </div>
+
+    <div class="main">
+        <h3>Log In</h3>
+        <form action="">
+
+            <span style="color: red; font-size: larger; " id='login_error'></span>
+
+            <div class="input_container">
+                <label for="user_name">User name</label>
+                <input type="text" placeholder="eg: jntwari" id="user_name">
+            </div>
+
+            <div class="input_container">
+                <label for="password">Password</label>
+                <input type="password" id="password">
+            </div>
+      
+            <div>
+                <button type="button" style="padding: 5px; background-color: red; color: white; font-size: larger; margin-top: 10px; width: 500px;"
+                    onclick="userLogin()"> 
+                    Log In </button> 
+            </div>
+        </form>
+    </div>
+
+    <div>
+        Copyright 2021 BoccoG
+    </div>
+    
+</body>
+
+<script src="../src/node_modules/axios/dist/axios.min.js"></script>
+<script src='../src/login.js'></script>
+
+
+</html>

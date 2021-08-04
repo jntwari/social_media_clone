@@ -1,0 +1,72 @@
+.main
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.left > .left-item
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 20px 5px 20px;
+    border: rgb(59, 59, 59) solid 1px;
+}
+
+.profile-image
+{
+    width: 150px;
+    height: 150px;
+    padding: 15px 30px 15px 30px;
+    border: rgb(59, 59, 59) solid 1px;
+}
+
+.middle
+{
+    border: rgb(59, 59, 59) solid 1px;
+    padding: 15px 30px 15px 30px;
+}
+
+.middle-subtitle
+{
+    display: flex;  
+    padding: 4px 30px 15px 5px;  
+}
+
+.middle-subtitle > .middle-title
+{
+    padding-right: 20px ;
+}
+
+.tweet
+{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    
+}
+
+.tweet > .poster-image
+{
+    height: 50px;
+    width: 50px;
+    padding-right: 20px;
+}
+
+.tweet-author
+{
+    padding-bottom: 15px;
+}
+
+.right
+{
+    padding: 20px 20px 20px 20px;
+    border: rgb(59, 59, 59) solid 1px;
+}
+
+.to-watch 
+{
+    border: rgb(59, 59, 59) solid 1px;
+    width: auto;
+    padding: 10px 30px 10px 30px;
+}

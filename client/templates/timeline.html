@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/timeline.css">
+   
+    <title>Social media clone</title>
+</head>
+<body>
+    <header>
+        <div class="Logo-title"> ENG@GE! </div>
+        <div class="motto"> the twitter clone done by Jean Bosco Ntwari</div>
+    </header>
+    <div class='nav-bar'>
+        <div class="left-nav nav-item">Eng@ge</div>
+
+        <div class="Login nav-item" style="background-color:  rgb(104, 19, 4);"> <a href="#">Timeline</a> </div>
+        <div class="Sign UP nav-item"> <a href="home.html"> My profile </a> </div>
+        <div class="Sign UP nav-item"> <a href="#" id="logout"> Logout </a> </div>
+    </div>
+    <div> <h1>Timeline</h1></div>
+    <div class="main">
+
+        <div class="left">
+            <div class="profile-container">
+                <div class="profile-image"><img src="../img/IMG_20190531_114129041~2.jpg" alt=""></div>
+                <div class="profile-stats">
+                    <div class="stats">
+                        <span> Tweets </span> <span> 56 </span>
+                    </div>
+                    <div class="stats">
+                        <span> Followers </span> <span> 300 </span>
+                    </div>    
+                </div>
+            </div>
+            <div class="add-post-container" id='add-post-container'> + Post new Message </div> 
+
+            <div class="post-tweet-form" id = 'post-tweet-form'>
+                <form action="">
+                    <span id="tweet_error" style="color: red;"></span>
+                    <div>
+                         <textarea name="tweet-area" id="tweet-area" cols="30" rows="10"></textarea>
+                    </div>
+                    <div>
+                        <div id="post-tweet" " style="background-color: rgb(138, 138, 253); color: whitesmoke ;">post</div>  
+                        <button id="cancel" style="background-color: red; color: whitesmoke ;">cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+
+
+<!-- --------------------------Middle content------------------------------------------- -->
+        <div class="middle">
+            <div class="tweet">
+                <div class="tweet-title">
+                    <div class="poster-image"><img src="../img/IMG_20190531_114129041~2.jpg" alt=""></div>
+                    <div class="tweet-author"> <span style="font-weight: bold;"> Jean Bosco Ntwari </span> <span> @jntwari</span> </div>
+                    <div class="posted-time">15min</div>
+                </div>                                 
+                <div class="tweet-content"> Ejo Nariye ibijumba byinshi cyane ndahaga kabsa!!! </div>
+            </div>
+
+            </div>
+        <!-- ---------------------------------Right content------------------------------------------------- -->
+
+        <div class="right">
+            <div style="font-size: larger; padding: 10px;">Who to watch</div>
+           
+            <div class="to-watch">
+                <div class="to-watch-title">THe english premier League</div>
+                <div class="to-watch-info">@The UCL 32222, followers</div>
+            </div>
+
+            <div class="to-watch">
+                <div class="to-watch-title">THe english premier League</div>
+                <div class="to-watch-info">@The UCL 32222, followers</div>
+            </div>
+
+            <div class="to-watch">
+                <div class="to-watch-title">THe english premier League</div>
+                <div class="to-watch-info"><span>@The UCL </span> <span> 32222 followers</span> </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        Copyright 2021 BoccoG
+    </div>
+
+
+
+</body>
+</html>
+<script src="../src/node_modules/axios/dist/axios.min.js"></script>
+<script src="../src/auth.js"></script>
+<script src='../src/timeline.js'></script>

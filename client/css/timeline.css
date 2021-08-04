@@ -1,0 +1,113 @@
+.main
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.left > .profile-container
+{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px 5px 20px;
+    border: rgb(168, 168, 168) solid 3px;
+}
+
+.profile-image
+{
+    width: 150px;
+    height: 150px;
+    padding: 15px 30px 15px 30px;
+}
+
+.profile-stats
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile-stats > .stats 
+{
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+}
+
+.add-post-container
+{
+    padding: 10px;
+    border: rgb(168, 168, 168) solid 3px;
+}
+
+.add-post-container:hover
+{
+    background-color: blanchedalmond;
+}
+
+.middle
+{
+    border: rgb(168, 168, 168) solid 3px;
+    padding: 15px 30px 15px 30px;
+}
+
+.middle-subtitle
+{
+    display: flex;  
+    padding: 4px 30px 15px 5px;  
+}
+
+.middle-subtitle > .middle-title
+{
+    padding-right: 20px ;
+}
+
+.tweet
+{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: rgb(168, 168, 168) solid 2px;
+    border-radius: 10px;
+    
+}
+
+.poster-image
+{
+    height: 40px;
+    width: 40px;
+    padding-right: 10px;
+}
+
+.tweet-title
+{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-bottom: 10px;
+    
+    
+}
+
+.tweet-title >.posted-time { margin-left: auto; }
+
+.right
+{
+    padding: 20px 20px 20px 20px;
+    border: rgb(59, 59, 59) solid 1px;
+}
+
+.to-watch 
+{
+    border: rgb(59, 59, 59) solid 1px;
+    width: auto;
+    padding: 10px 30px 10px 30px;
+}
+
+.post-tweet-form
+{
+    margin-top: 15px;
+    padding: 5px;
+    border: rgb(156, 144, 202) solid 1px;
+    border-radius: 5px;
+    display: none;
+}
