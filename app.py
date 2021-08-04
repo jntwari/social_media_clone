@@ -104,7 +104,7 @@ def post_tweet():
     if  authenticate_id != - 1:
         tweet_text = request.get_json()['tweet']
         tweet = Tweet(user_id = authenticate_id, content = tweet_text, date_create=datetime.now())
-        print(tweet)
+    
         db.session.add(tweet)
         db.session.commit()
 
@@ -120,8 +120,6 @@ def get_my_tweets():
     authenticate_id = authorize(auth_header)
     if  authenticate_id != - 1:
         tweets = Tweet.query.filter_by(user_id=authenticate_id).all()
-        for tweet in tweets:
-            print(tweet.to_dict())
         return jsonify({'tweets': tweets}), 200
     else:
         return jsonify({'message': 'Anauthorized access'}), 404

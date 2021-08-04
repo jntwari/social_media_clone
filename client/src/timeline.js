@@ -2,11 +2,14 @@
 checkLogin();
 
 const path = 'http://127.0.0.1:5000';
+let tweets = [];
 
 const AddpostDOM = document.getElementById('add-post-container');
 const cancelDOM = document.getElementById('cancel');
 const logoutDOM = document.getElementById('logout');
 const postTweetDoM = document.getElementById('post-tweet'); 
+const middleDOM = document.getElementById('middle');
+
 
 const config = {
     headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
@@ -38,12 +41,55 @@ postTweetDoM.addEventListener('click', async() =>
     if(tweetContent.value !='')
     {
         const tweet = await axios.post(`${path}/tweet`, {tweet:tweetContent.value}, config);
-        tweetContent.innerText = '';
-        tweetErrorDOM.innerHTML  = '';
+       
+        //tweetErrorDOM.innerHTML  = '';
         alert('Tweet successfully posted!');
+        middleDOM.insertAdjacentHTML('afterbegin', tweetDOM(localStorage.getItem('fullNames'), localStorage.getItem('userName'), "today", tweetContent.value));
+        tweetContent.value = '';
     }
     else
     {
          tweetErrorDOM.innerHTML = 'You cant post an empty';
     }
 })
+
+
+
+// To do on this page
+ const getMyTweets =  async() =>
+ {
+    let myTweets = [];
+    try 
+    {
+       const myTweetsData = await axios.get(`${path}/tweet`, config);
+       myTweets = myTweetsData.data.tweets;
+    } 
+    catch (error) 
+    {
+        myTweets = [];
+        console.log('here')
+    }
+
+    return myTweets
+ }
+
+ const loadPage = async () =>
+ {
+    tweets = await getMyTweets();
+    if(tweets.length > 0)
+    {
+        tweets.forEach(tweet =>
+            {
+                middleDOM.insertAdjacentHTML('beforeend', tweetDOM(localStorage.getItem('fullNames'), localStorage.getItem('userName'), "today", tweet.content));
+            })
+    }
+    else
+    {
+        middleDOM.innerHTML = `<h1> You have no tweets yet </h1>`
+    }
+ }
+
+ loadPage();
+ 
+
+ 

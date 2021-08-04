@@ -16,7 +16,7 @@ const logout = () =>
 {
     localStorage.removeItem('userId');
     localStorage.removeItem('userName');
-    localStorage.removeItem('fullName');
+    localStorage.removeItem('fullNames');
     localStorage.removeItem('token')
 
     window.location.href = 'login.html';
