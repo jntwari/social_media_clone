@@ -75,6 +75,30 @@ def get_my_tweets():
     authenticate_id = authorize(auth_header)
     if  authenticate_id != - 1:
         tweets = Tweet.query.filter_by(user_id=authenticate_id).all()
-        return jsonify({'tweets': tweets}), 200
+        total_tweets = len(tweets)
+
+        return jsonify({ 'tweets': tweets, 'totalTweets': total_tweets}), 200
     else:
         return jsonify({'message': 'Anauthorized access'}), 404
+
+
+@app.route('/profile', methods=['GET'])
+def get_user_profile():
+    userName = None,
+    userName = request.get_json()['username']
+    if userName:
+        user = Users.query.filter_by(username = userName).first()
+        
+        if not user:
+            return jsonify({'message': 'invalid user'}), 404
+        else:
+            userId = user.id
+            tweets = Tweet.query.filter_by(user_id = userId).all()
+
+            profile_info = {
+                'fullNames': user.name,
+                'handle': user.username,
+                'tweets': tweets
+            }
+
+            return jsonify(profile_info), 200

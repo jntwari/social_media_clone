@@ -3,6 +3,7 @@ checkLogin();
 
 const path = 'http://127.0.0.1:5000';
 let tweets = [];
+let totalTweets;
 
 const AddpostDOM = document.getElementById('add-post-container');
 const cancelDOM = document.getElementById('cancel');
@@ -46,6 +47,9 @@ postTweetDoM.addEventListener('click', async() =>
         alert('Tweet successfully posted!');
         middleDOM.insertAdjacentHTML('afterbegin', tweetDOM(localStorage.getItem('fullNames'), localStorage.getItem('userName'), "today", tweetContent.value));
         tweetContent.value = '';
+        totalTweets = totalTweets + 1;
+        totalTweetsDOM.innerHTML = totalTweets;
+
     }
     else
     {
@@ -54,15 +58,20 @@ postTweetDoM.addEventListener('click', async() =>
 })
 
 
-
 // To do on this page
  const getMyTweets =  async() =>
  {
     let myTweets = [];
+    const totalTweetsDOM = document.getElementById('total_tweets');
     try 
     {
        const myTweetsData = await axios.get(`${path}/tweet`, config);
        myTweets = myTweetsData.data.tweets;
+       totalTweets = myTweetsData.data.totalTweets;
+
+       totalTweetsDOM.innerHTML = totalTweets;
+
+
     } 
     catch (error) 
     {
