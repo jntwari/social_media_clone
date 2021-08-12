@@ -82,7 +82,7 @@ def get_my_tweets():
         return jsonify({'message': 'Anauthorized access'}), 404
 
 
-@app.route('/profile', methods=['GET'])
+@app.route('/profile', methods=['POST'])
 def get_user_profile():
     userName = None,
     userName = request.get_json()['username']
@@ -101,4 +101,4 @@ def get_user_profile():
                 'tweets': tweets
             }
 
-            return jsonify(profile_info), 200
+            return jsonify(profile_info), 200 

@@ -1,6 +1,3 @@
-const path = 'http://127.0.0.1:5000';
-
-
 
 const userLogin = async() =>
 {
@@ -18,7 +15,7 @@ const userLogin = async() =>
             localStorage.setItem('userName', newUser.data.username);
             localStorage.setItem('token', newUser.data.token);
 
-            window.location.href = 'home.html';           
+            window.location.href = `home.html?username=${newUser.data.username}`;           
         }
         catch(error)
         {

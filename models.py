@@ -5,6 +5,12 @@ from datetime import datetime
 
 #Models section
 #---------------------------------------------------------------
+
+followers = db.Table('follower',
+    db.Column('follower_id', db.Integer, db.ForeignKey('users.id')),
+    db.Column('followee_id', db.Integer, db.ForeignKey('users.id')))
+
+
 @dataclass
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -13,6 +19,13 @@ class Users(db.Model):
     image = db.Column(db.String(100))
     password = db.Column(db.String(400))
     join_date = db.Column(db.DateTime)
+
+    tweets = db.relationship('Tweet', backref='users', lazy='dynamic')
+
+    following = db.relationship('User', secondary= followers,
+        primaryjoin=(followers.c.follower_id == id),
+        secondaryjoin=(followers.c.followee_id == id),
+        backref = db.backref('followers', lazy='dynamic'), lazy='dynamic')
 
     
 
@@ -26,7 +39,5 @@ class Tweet(db.Model,SerializerMixin ):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     content = db.Column(db.String(400))
     date_create = db.Column(db.DateTime)
-
-
 
 

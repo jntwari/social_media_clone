@@ -9,8 +9,10 @@ __pycache__/
 # Distribution / packaging
 .Python
 migrations/
+src/components/path.js
 env/
-const
+const.py
+client/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
