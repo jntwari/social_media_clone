@@ -102,3 +102,24 @@ def get_user_profile():
             }
 
             return jsonify(profile_info), 200 
+
+
+
+@app.route('/follow', methods=['POST'])
+def follow():
+    auth_header = request.headers.get('Authorization')
+    authenticate_id = authorize(auth_header)
+    if  authenticate_id != - 1:
+        username = request.get_json()['username']
+
+        follower = Users.query.filter_by(id = authenticate_id).first()
+        user_to_follow = Users.query.filter_by(username = username).first()
+
+        follower.following.append(user_to_follow)
+
+        db.session.commit()
+
+        return jsonify({'message': 'success'}), 200
+    else:
+        return jsonify({'message': 'success'}), 404
+

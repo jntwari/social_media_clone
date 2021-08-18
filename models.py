@@ -22,11 +22,15 @@ class Users(db.Model):
 
     tweets = db.relationship('Tweet', backref='users', lazy='dynamic')
 
-    following = db.relationship('User', secondary= followers,
+    following = db.relationship('Users', secondary= followers,
         primaryjoin=(followers.c.follower_id == id),
         secondaryjoin=(followers.c.followee_id == id),
         backref = db.backref('followers', lazy='dynamic'), lazy='dynamic')
 
+    followed_by = db.relationship('Users', secondary= followers,
+        primaryjoin=(followers.c.followee_id == id),
+        secondaryjoin=(followers.c.follower_id == id),
+        backref = db.backref('followers', lazy='dynamic'), lazy='dynamic')
     
 
 @dataclass
