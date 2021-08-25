@@ -83,3 +83,33 @@ img
     height: 25px;
     width: 300px;
 }
+
+.tweet
+{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: rgb(168, 168, 168) solid 2px;
+    border-radius: 10px;
+    margin-top: 10px;
+    
+}
+
+.poster-image
+{
+    height: 40px;
+    width: 40px;
+    padding-right: 10px;
+}
+
+.tweet-title
+{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-bottom: 10px;
+    
+    
+}
+
+.tweet-title >.posted-time { margin-left: auto; }

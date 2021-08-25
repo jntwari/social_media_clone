@@ -101,3 +101,8 @@
 }
 
 .tweet-title >.posted-time { margin-left: auto; }
+
+.middle-header
+{
+    color: tomato;
+}

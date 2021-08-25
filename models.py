@@ -6,6 +6,7 @@ from datetime import datetime
 #Models section
 #---------------------------------------------------------------
 
+
 followers = db.Table('follower',
     db.Column('follower_id', db.Integer, db.ForeignKey('users.id')),
     db.Column('followee_id', db.Integer, db.ForeignKey('users.id')))
@@ -13,6 +14,10 @@ followers = db.Table('follower',
 
 @dataclass
 class Users(db.Model):
+    id: int
+    name: str
+    username: str
+    join_date: datetime
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200))
     username = db.Column(db.String(100))
@@ -30,7 +35,7 @@ class Users(db.Model):
     followed_by = db.relationship('Users', secondary= followers,
         primaryjoin=(followers.c.followee_id == id),
         secondaryjoin=(followers.c.follower_id == id),
-        backref = db.backref('followers', lazy='dynamic'), lazy='dynamic')
+        backref = db.backref('followees', lazy='dynamic'), lazy='dynamic')
     
 
 @dataclass

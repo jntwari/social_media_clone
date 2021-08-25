@@ -94,17 +94,21 @@ def get_user_profile():
         else:
             userId = user.id
             tweets = Tweet.query.filter_by(user_id = userId).all()
+            followed_by = user.followed_by.all()
+            followees = user.following.all()
 
             profile_info = {
                 'fullNames': user.name,
                 'handle': user.username,
-                'tweets': tweets
+                'tweets': tweets,
+                'followers': followed_by,
+                'followees': followees
             }
 
             return jsonify(profile_info), 200 
 
 
-
+#this is the follow method 
 @app.route('/follow', methods=['POST'])
 def follow():
     auth_header = request.headers.get('Authorization')

@@ -28,7 +28,8 @@
             <div class="profile-image"><img src="../img/IMG_20190531_114129041~2.jpg" alt=""></div>
             <div class="left-item"><span>Name</span> <span id="account-name"></span></div>
             <div class="left-item"><span>Handle</span> <span id="account-username"></span></div>
-            <div class="left-item"><span>Followers Count</span> <span>300</span></div>
+            <div class="left-item"><span>Followers Count</span> <span id='total_followers'></span></div>
+            <div class="left-item" id="follow-link" style="text-align: center;">Follow</div>
         </div>
 
 
@@ -36,8 +37,8 @@
         <div class="middle">
            <div class="activity"> <h3>Activity</h3></div>
            <div class="middle-subtitle">
-               <div class="middle-title">Tweets and reply</div>
-               <div class="Followers"> Followers</div>
+               <div class="middle-title middle-header" id="middle-title">Tweets and reply</div>
+               <div class="Followers" id="followers-title"> Followers</div>
            </div> 
 
            
@@ -103,4 +104,5 @@
 <script src="../src/auth.js"></script>
 <script src="../src/components/path.js"></script>
 <script src="../src/components/tweet.js"></script>
+<script src="../src/components/follower.js"></script>
 <script src='../src/home.js'></script>
